@@ -8,7 +8,7 @@ describe("register", () => {
     cy.get("#gender-female").check();
     cy.get("#FirstName").type("Yohanna");
     cy.get("#LastName").type("Santoso");
-    cy.get("#Email").type("yo_hanna_ms3@yahoo.com");
+    cy.get("#Email").type("yo_hanna_ms4@yahoo.com");
     cy.get("#Password").type("123456");
     cy.get("#ConfirmPassword").type("123456");
     cy.get("#register-button").click();
@@ -16,7 +16,7 @@ describe("register", () => {
     cy.get(".register-continue-button").should("exist").click();
     cy.get("[href='/customer/info']").should(
       "contain.text",
-      "yo_hanna_ms3@yahoo.com"
+      "yo_hanna_ms4@yahoo.com"
     );
   });
 });
