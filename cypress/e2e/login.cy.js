@@ -3,12 +3,12 @@ describe("login", () => {
     cy.visit("/");
   });
 
-  it.only("success login with custom command", () => {
+  it("success login with custom command", () => {
     cy.login("yo_hanna_ms@yahoo.com", "123456");
     cy.url().should("eq", "https://demowebshop.tricentis.com/");
   });
 
-  it("success login", () => {
+  it.only("success login", () => {
     cy.get('[href="/login"]').click();
     cy.get("#Email").type("yo_hanna_ms@yahoo.com");
     cy.get("#Password").type("123456");
