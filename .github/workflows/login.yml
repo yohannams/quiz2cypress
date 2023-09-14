@@ -5,10 +5,10 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v2
 
       - name: Regression Tricentis
-        uses: cypress-io/github-action@v6
+        uses: cypress-io/github-action@v2
         with:
-          spec: cypress\e2e\login.cy.js
+          spec: cypress/e2e/login.cy.js
           Browser: Chrome
