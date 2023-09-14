@@ -11,5 +11,5 @@ jobs:
       - name: Regression Tricentis
         uses: cypress-io/github-action@v6
         with:
-          spec: cypress/e2e/login.cy.js
+          spec: cypress\e2e\login.cy.js
           Browser: Chrome
