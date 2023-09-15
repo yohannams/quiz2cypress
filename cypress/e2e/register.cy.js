@@ -1,3 +1,5 @@
+import Register from "../support/page-objects/register";
+
 describe("register", () => {
   beforeEach(() => {
     cy.visit("/");
@@ -81,6 +83,22 @@ describe("register", () => {
     cy.get("span[for='ConfirmPassword']").should(
       "contain.text",
       "The password and confirmation password do not match."
+    );
+  });
+});
+
+describe("Register using POM", () => {
+  it.only("Success Register", () => {
+    Register.visit();
+    Register.fillFirstName("Yohanna");
+    Register.fillLastName("Santoso");
+    Register.fillEmail("yo_hanna_ms9@yahoo.com");
+    Register.fillPassword("123456");
+    Register.fillConfirmPassword("123456");
+    Register.clickRegisterButton();
+    cy.get("[href='/customer/info']").should(
+      "contain.text",
+      "yo_hanna_ms9@yahoo.com"
     );
   });
 });

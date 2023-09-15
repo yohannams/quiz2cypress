@@ -65,6 +65,9 @@ describe("Login using POM", () => {
 });
 
 describe("Login with custom command", () => {
+  beforeEach(() => {
+    cy.visit("/");
+  });
   it("success login", () => {
     cy.login("yo_hanna_ms@yahoo.com", "123456");
     cy.url().should("eq", "https://demowebshop.tricentis.com/");
@@ -72,6 +75,9 @@ describe("Login with custom command", () => {
 });
 
 describe("Login using fixtures", () => {
+  beforeEach(() => {
+    cy.visit("/");
+  });
   it("success login", () => {
     cy.fixture("login.json").then((data) => {
       cy.get('[href="/login"]').click();
