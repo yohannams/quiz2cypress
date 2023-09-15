@@ -20,7 +20,7 @@ describe("register", () => {
     );
   });
 
-  it("success register", () => {
+  it("success register - gender is not selected", () => {
     cy.get('[href="/register"]').click();
     cy.get("#FirstName").type("Yohanna");
     cy.get("#LastName").type("Santoso");
@@ -36,7 +36,7 @@ describe("register", () => {
     );
   });
 
-  it("failed register", () => {
+  it("failed register - empty last name", () => {
     cy.get('[href="/register"]').click();
     cy.get("#gender-female").check();
     cy.get("#FirstName").type("Yohanna");
@@ -50,7 +50,7 @@ describe("register", () => {
     );
   });
 
-  it("failed register", () => {
+  it("failed register - password not match", () => {
     cy.get('[href="/register"]').click();
     cy.get("#gender-female").check();
     cy.get("#FirstName").type("Yohanna");
@@ -65,7 +65,7 @@ describe("register", () => {
     );
   });
 
-  it("failed register", () => {
+  it("failed register - password not eligible and not match", () => {
     cy.get('[href="/register"]').click();
     cy.get("#gender-female").check();
     cy.get("#FirstName").type("Yohanna");
